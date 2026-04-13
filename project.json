@@ -1,0 +1,24 @@
+{
+  "overview": "A clean, modern dashboard UI for a Workflow Automation Control System — featuring a drag-and-drop workflow canvas, workflow management list, and API key management page.",
+  "features": [
+    "Drag-and-drop workflow builder canvas with 4 node types",
+    "SVG connector lines between nodes",
+    "Right-side node property editor panel",
+    "Workflow list with CRUD actions and status badges",
+    "API key management with masked display and copy/generate",
+    "REST API reference with code blocks",
+    "Dark slate theme with violet accents",
+    "Responsive left sidebar navigation"
+  ],
+  "category": "developer-tools",
+  "tags": [
+    "workflow",
+    "automation",
+    "dashboard",
+    "drag-and-drop",
+    "dark-theme",
+    "react",
+    "typescript"
+  ],
+  "last_updated": "2026-04-13T09:06:31.776Z"
+}

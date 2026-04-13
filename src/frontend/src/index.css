@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Inter", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-mono: "ui-monospace", "SFMono-Regular", "Menlo", monospace;
+    --radius: 0.5rem;
+
+    --background: 0.99 0 0;
+    --foreground: 0.15 0 0;
+    --card: 1.0 0 0;
+    --card-foreground: 0.15 0 0;
+    --popover: 1.0 0 0;
+    --popover-foreground: 0.15 0 0;
+
+    --primary: 0.55 0.2 300;
+    --primary-foreground: 0.98 0 0;
+
+    --secondary: 0.95 0 0;
+    --secondary-foreground: 0.25 0 0;
+    --muted: 0.95 0 0;
+    --muted-foreground: 0.5 0 0;
+
+    --accent: 0.55 0.2 300;
+    --accent-foreground: 0.98 0 0;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.9 0 0;
+    --input: 0.9 0 0;
+    --ring: 0.55 0.2 300;
+
+    --sidebar: 0.98 0 0;
+    --sidebar-foreground: 0.15 0 0;
+    --sidebar-primary: 0.55 0.2 300;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.95 0 0;
+    --sidebar-accent-foreground: 0.25 0 0;
+    --sidebar-border: 0.9 0 0;
+    --sidebar-ring: 0.55 0.2 300;
+  }
+
+  .dark {
+    /* Slate #0f172a → L=0.11 C=0.02 H=260 in OKLCH */
+    --background: 0.11 0.02 260;
+    --foreground: 0.94 0 0;
+
+    /* slate-800 cards */
+    --card: 0.17 0.02 260;
+    --card-foreground: 0.94 0 0;
+    --popover: 0.2 0.02 260;
+    --popover-foreground: 0.94 0 0;
+
+    /* violet-500/600 primary */
+    --primary: 0.6 0.22 300;
+    --primary-foreground: 0.98 0 0;
+
+    --secondary: 0.2 0.02 260;
+    --secondary-foreground: 0.88 0 0;
+    --muted: 0.22 0.02 260;
+    --muted-foreground: 0.62 0 0;
+
+    --accent: 0.6 0.22 300;
+    --accent-foreground: 0.98 0 0;
+
+    --destructive: 0.58 0.21 25;
+    --destructive-foreground: 0.96 0 0;
+
+    /* slate-700 borders */
+    --border: 0.28 0.02 260;
+    --input: 0.28 0.02 260;
+    --ring: 0.6 0.22 300;
+
+    --chart-1: 0.7 0.21 130;
+    --chart-2: 0.65 0.18 250;
+    --chart-3: 0.75 0.15 85;
+    --chart-4: 0.6 0.2 40;
+    --chart-5: 0.65 0.18 310;
+
+    /* sidebar slightly lighter than background */
+    --sidebar: 0.14 0.02 260;
+    --sidebar-foreground: 0.94 0 0;
+    --sidebar-primary: 0.6 0.22 300;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.2 0.02 260;
+    --sidebar-accent-foreground: 0.9 0 0;
+    --sidebar-border: 0.28 0.02 260;
+    --sidebar-ring: 0.6 0.22 300;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", sans-serif;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .font-display {
+    font-family: "Inter", sans-serif;
+  }
+
+  .font-body {
+    font-family: "Inter", sans-serif;
+  }
+
+  .font-mono {
+    font-family: ui-monospace, "SFMono-Regular", "Menlo", monospace;
+  }
+
+  /* Node type accent borders */
+  .node-trigger {
+    @apply border-l-4 border-violet-500;
+  }
+
+  .node-api {
+    @apply border-l-4 border-blue-500;
+  }
+
+  .node-condition {
+    @apply border-l-4 border-amber-500;
+  }
+
+  .node-action {
+    @apply border-l-4 border-emerald-500;
+  }
+
+  /* Scrollbar styling */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(var(--border)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: oklch(var(--border));
+    border-radius: 3px;
+  }
+
+  /* Canvas dotted grid */
+  .canvas-grid {
+    background-image: radial-gradient(
+      circle,
+      oklch(var(--border) / 0.5) 1px,
+      transparent 1px
+    );
+    background-size: 24px 24px;
+  }
+}
